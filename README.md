@@ -23,6 +23,10 @@ cd ai-thesis-writing
 pip3 install jieba scikit-learn
 ```
 
+### 0. 第一步：把学校文件喂给 AI 生成硬约束规范
+
+拿到学校发的要求通知、格式规范、撰写模板、评分标准后，先按 [references/school-requirements-workflow.md](references/school-requirements-workflow.md) 的流程，把它们全部提取合并成一份 `school-requirements-spec.md` 硬约束规范——之后写/改论文、生成 Word、提交前自查全部以它为准，不靠记忆。这是避免"定稿后才发现格式不合格"返工的关键一步。
+
 ### 1. 内部查重（花钱查重前必做）
 
 ```bash
@@ -115,6 +119,8 @@ MD 是源文件，Word 是生成物。用 python-docx 脚本生成，不经过 H
 ```
 ├── SKILL.md                    # 完整方法论（可作为 Claude Code Skill 安装）
 ├── README.md
+├── references/
+│   └── school-requirements-workflow.md  # 学校文件→硬约束规范的摄入流程
 └── scripts/
     ├── check_plagiarism.py     # 内部查重（jieba + TF-IDF）
     ├── check_aigc.py           # AIGC 检测（模型+规则双模式）
