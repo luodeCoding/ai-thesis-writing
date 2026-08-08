@@ -1,5 +1,7 @@
 # AI 毕业论文写作工具箱（ai-thesis-writing）
 
+![版本](https://img.shields.io/badge/版本-v1.2.0-blue) ![License](https://img.shields.io/badge/License-MIT-green)
+
 > 用 AI 辅助完成毕业论文的全流程经验提炼 + 配套检测脚本。
 > 从一次完整的论文制作周期（选题→初稿→降重→AIGC清理→排版→提交）中总结的 28 个实战坑。
 
@@ -20,7 +22,8 @@
 ```bash
 git clone https://github.com/luodeCoding/ai-thesis-writing.git
 cd ai-thesis-writing
-pip3 install jieba scikit-learn
+pip3 install -r requirements.txt   # 核心依赖：jieba + scikit-learn
+# 可选：AIGC 模型模式、学校文件读取等，见 requirements-optional.txt
 ```
 
 ### 0. 第一步：把学校文件喂给 AI 生成硬约束规范
@@ -59,7 +62,7 @@ python3 scripts/check_consistency.py ~/my-thesis --glob "*.md" \
 ```
 
 - `--terms`：互斥术语组——同一组术语在全文出现多种说法 = 术语漂移
-- `--numbers`：互斥数字组——同一文件出现同组多个数字 = 数据矛盾
+- `--numbers`：互斥数字组——同一文件出现同组多个数字 = 数据矛盾；同组数字分散在不同文件 = 跨章矛盾预警
 
 ## 核心方法论（详见 SKILL.md）
 
@@ -119,6 +122,10 @@ MD 是源文件，Word 是生成物。用 python-docx 脚本生成，不经过 H
 ```
 ├── SKILL.md                    # 完整方法论（可作为 Claude Code Skill 安装）
 ├── README.md
+├── CHANGELOG.md                # 版本更新日志（Keep a Changelog 格式）
+├── AGENTS.md                   # AI 代理协作与发布流程约定
+├── requirements.txt            # 核心依赖
+├── requirements-optional.txt   # 可选依赖（模型检测/学校文件读取）
 ├── references/
 │   └── school-requirements-workflow.md  # 学校文件→硬约束规范的摄入流程
 └── scripts/
@@ -126,6 +133,12 @@ MD 是源文件，Word 是生成物。用 python-docx 脚本生成，不经过 H
     ├── check_aigc.py           # AIGC 检测（模型+规则双模式）
     └── check_consistency.py    # 术语/数字一致性检查
 ```
+
+## 版本管理
+
+- 版本号遵循[语义化版本](https://semver.org/lang/zh-CN/)，每次发布打对应的 Git tag（`vX.Y.Z`）并创建 GitHub Release
+- 各版本的详细变更见 [CHANGELOG.md](CHANGELOG.md)
+- 当前版本：**v1.2.0**
 
 ## 作为 Claude Code Skill 使用
 

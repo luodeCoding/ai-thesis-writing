@@ -1,0 +1,11 @@
+# 可选依赖：按需安装，不装也能用（脚本会自动降级或跳过）
+
+# AIGC 模型检测模式（check_aigc.py，不装则自动降级为规则模式）
+# 注意：新版 transformers 需要 torch>=2.4；macOS brew 的 python3.11 可能只有 torch 2.2.x，建议用 conda 安装
+torch>=2.4
+transformers>=4.40
+
+# 学校要求摄入工作流（references/school-requirements-workflow.md）
+pymupdf>=1.24      # 读取 PDF（含图片型 PDF 提图）
+python-docx>=1.1   # 读取/生成 .docx
+openpyxl>=3.1      # 读取 .xlsx

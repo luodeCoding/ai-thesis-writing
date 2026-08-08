@@ -107,8 +107,14 @@ def main():
     print("=" * 70)
 
     model_pack = None
-    if not args.rules_only:
+    if args.rules_only:
+        print("ℹ️ 已指定 --rules-only，使用规则模式检测\n")
+    else:
         model_pack = load_model()
+        if model_pack:
+            print("ℹ️ 当前模式：模型检测\n")
+        else:
+            print("ℹ️ 当前模式：规则检测（模型不可用，自动降级）\n")
 
     chapters = load_chapters(args.thesis_dir, args.glob)
     total_paras = sum(len(v) for v in chapters.values())
