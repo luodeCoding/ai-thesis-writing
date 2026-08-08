@@ -23,5 +23,6 @@
 3. **提交** — commit message 格式：`类型: 描述`（feat/fix/docs/chore/release）
 4. **打 tag** — `git tag -a vX.Y.Z -m "版本说明"`，tag 与 CHANGELOG 版本段一一对应
 5. **推送** — `git push origin main --tags`，并用 `gh release create vX.Y.Z --notes "..."` 创建 GitHub Release
+6. **同步博客** — 更新博文 `~/Desktop/博客/HexoRoder/source/_posts/AI毕业论文踩坑实录.md`（在「🆕 更新记录」章节追加本次版本内容），然后 `npx hexo generate && npx hexo deploy` 部署，并把博文源码提交推送到 hexo 分支
 
 版本号规则（语义化版本）：新增方法论章节/脚本 → MINOR；文案修订/小优化 → PATCH；结构重构 → MAJOR。
