@@ -7,7 +7,11 @@
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-08-08
+
 ### 新增
+- **文献检索与综述工作流** `references/literature-search-workflow.md` — 文献环节三道坎（检索/筛选/格式化）的完整方案：知网手动检索兜底 + 知网 MCP 服务（如 Cnki-Mcp）自动化检索两条路径、GB/T 7714 格式化流程、综述三要素写法、防 AI 编造文献红线
+- `SKILL.md` 第八章补充自动化检索路径与防编造红线；相关开源工具表新增 Cnki-Mcp，claude-scholar 描述扩充为学术技能库（含进阶生态指引）
 - `AGENTS.md` 发布流程新增第 6 步「同步博客」：每次发布须同步更新 Hexo 博文并部署
 
 ## [1.2.0] - 2026-08-08
@@ -39,6 +43,7 @@
 - `scripts/check_consistency.py` — 互斥术语组 / 互斥数字组跨章一致性检查
 - MIT License
 
+[1.3.0]: https://github.com/luodeCoding/ai-thesis-writing/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/luodeCoding/ai-thesis-writing/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/luodeCoding/ai-thesis-writing/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/luodeCoding/ai-thesis-writing/releases/tag/v1.0.0

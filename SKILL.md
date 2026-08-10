@@ -216,11 +216,13 @@ grep -oE '图[0-9]+-[0-9]+' chapters/*.md | sort -u  # 确认每章图号连续
 - arXiv 预印本必须用 `[EB/OL]` 格式并补访问日期
 - 作者写到第三位，余者写"，等"或"，et al."
 
-**知网搜索注意**：知网对自动化访问有 IP 级反爬封锁，只能手动搜索（高级检索→学位论文→关键词组合）。把结果发给 AI 整理成 GB/T 7714 格式。
+**知网搜索注意**：知网对自动化访问有 IP 级反爬封锁。两条路径：**手动检索**（高级检索→学位论文→关键词组合，结果发给 AI 整理成 GB/T 7714）兜底；**知网 MCP 服务**（如 Cnki-Mcp）让 AI 直接调用检索工具，效率更高但要控制频率防风控。完整操作见 `references/literature-search-workflow.md`。
 
 **常见硬指标**（以学校通知为准）：参考文献≥35篇、外文≥4-5篇、**近三年文献占比≥80%**（这条最容易不达标，需提前统计）、文中呈现国内外研究现状+理论基础+技术路线图。
 
 **文献综述不能只罗列**："XX提出了XX"的罗列式会被认为深度不够。每个方向必须包含：(a) 代表性工作列举 (b) **对比分析**（不同方案优劣）(c) **选型理由**（本系统为何选A不选B）。
+
+**防编造红线**：AI 可能编造不存在的文献或卷期页。中文文献信息必须以知网页面为准，提交前抽查核实；需要批量核实可借助 citation-verification 类技能。
 
 ## 九、字数参考（自考本科）
 
@@ -315,7 +317,8 @@ grep -oE '图[0-9]+-[0-9]+' chapters/*.md | sort -u  # 确认每章图号连续
 |------|------|
 | thesis-typeset (153lsr/thesis-typeset) | Python Word 一键排版 |
 | ucasthesis (mohuangrui/ucasthesis) | LaTeX 中文论文模板 |
-| claude-scholar (Galaxy-Dawn/claude-scholar) | 学术研究全流程 |
+| claude-scholar (Galaxy-Dawn/claude-scholar) | 学术研究全流程技能库（40+ 学术技能） |
+| Cnki-Mcp (PluginsX/Cnki-Mcp) | 知网文献检索 MCP 服务（第三方） |
 | paperdebugger (PaperDebugger/paperdebugger) | 论文 AI 审阅 |
 | BypassAIGC (chi111i/BypassAIGC) | AIGC 降重 |
 | mermaid.ink | 在线 Mermaid 图生成 |

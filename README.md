@@ -1,6 +1,6 @@
 # AI 毕业论文写作工具箱（ai-thesis-writing）
 
-![版本](https://img.shields.io/badge/版本-v1.2.0-blue) ![License](https://img.shields.io/badge/License-MIT-green)
+![版本](https://img.shields.io/badge/版本-v1.3.0-blue) ![License](https://img.shields.io/badge/License-MIT-green)
 
 > 用 AI 辅助完成毕业论文的全流程经验提炼 + 配套检测脚本。
 > 从一次完整的论文制作周期（选题→初稿→降重→AIGC清理→排版→提交）中总结的 28 个实战坑。
@@ -127,7 +127,8 @@ MD 是源文件，Word 是生成物。用 python-docx 脚本生成，不经过 H
 ├── requirements.txt            # 核心依赖
 ├── requirements-optional.txt   # 可选依赖（模型检测/学校文件读取）
 ├── references/
-│   └── school-requirements-workflow.md  # 学校文件→硬约束规范的摄入流程
+│   ├── school-requirements-workflow.md  # 学校文件→硬约束规范的摄入流程
+│   └── literature-search-workflow.md    # 文献检索（手动+知网MCP）与综述工作流
 └── scripts/
     ├── check_plagiarism.py     # 内部查重（jieba + TF-IDF）
     ├── check_aigc.py           # AIGC 检测（模型+规则双模式）
@@ -138,7 +139,7 @@ MD 是源文件，Word 是生成物。用 python-docx 脚本生成，不经过 H
 
 - 版本号遵循[语义化版本](https://semver.org/lang/zh-CN/)，每次发布打对应的 Git tag（`vX.Y.Z`）并创建 GitHub Release
 - 各版本的详细变更见 [CHANGELOG.md](CHANGELOG.md)
-- 当前版本：**v1.2.0**
+- 当前版本：**v1.3.0**
 
 ## 作为 Claude Code Skill 使用
 
